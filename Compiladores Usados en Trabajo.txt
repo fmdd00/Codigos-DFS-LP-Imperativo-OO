@@ -1,0 +1,14 @@
+Para la ejecucion del codigo hecho en lenguaje c# usamos:
+
+https://replit.com/languages/csharp
+
+el editado del codigo se hizo en: https://notepad-plus-plus.org/downloads/
+versión 8.1
+
+
+
+Para la ejecucion del codigo hecho en lenguaje Ruby usamos:
+
+https://replit.com/languages/ruby
+
+editado del codigo se hizo en la misma página de replit

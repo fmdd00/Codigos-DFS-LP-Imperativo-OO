@@ -1,0 +1,82 @@
+#implementamos una matriz para la realizacion del algortimo DFS
+matriz = [[0,1,1,0,0,0,0,0,0,0],
+          [1,0,0,1,1,0,0,0,0,0],
+          [1,0,0,0,0,0,0,0,1,0],
+          [0,1,0,0,0,0,0,0,0,0],
+          [0,1,0,0,0,0,1,1,0,0],
+          [0,0,1,0,0,0,0,0,0,0],
+          [0,0,0,0,1,0,0,0,1,0],
+          [0,0,0,0,1,0,0,0,0,0],
+          [0,0,0,0,0,0,1,0,0,0],
+          [0,0,0,0,0,1,0,0,0,0]]
+a = 0
+res = [0]
+rHijo = []
+resCad =[]
+noE = 0
+len = matriz.length
+
+#mientras el nodo no encontrado exceda de 
+while noE <= 3
+    volver = 1
+    # Hacemos un recorrdio para eliminar, en la busqueda, los nodos ya recorridos
+    for x in (0..len)
+        res.each do |valor|
+            matriz[a][valor] = 0
+        end
+    end
+    
+    # Empezamos el recorrido por el primer nodo
+    for i in (0..len)
+        if matriz[a][i] == 1
+            matriz[a][i] = 0
+            a = i
+            res.push(i)
+            respPadre = res
+            # Cuando volver sea 0, esto indicará que se encuentran nodos adyacentes
+            volver = 0
+        end
+    end
+    
+    # Pero si volver es 1 se indicará que no hay nodos adyacentes y el padre será el ultimo 
+    if volver == 1
+        lenP = rHijo.length
+      # tamaño del hijo es mayor a cero
+        if lenP>0
+          # se agregará al nodo principal 
+            a = rHijo[lenP]
+            rHijo.delete_at(lenP)
+        end
+    end
+    noE = noE +1
+end
+
+# Por último hacemos una conversioó de los nodos con un valor numerico
+# a que esten identificados con letras
+for i in (0..len)
+    x = res[i]
+  # todo esto mientras x tome cada valor mostrado a continuacion
+    case x
+        when 0
+        resCad[i] = "A"
+        when 1
+        resCad[i] = "B"
+        when 2
+        resCad[i] = "C"
+        when 3
+        resCad[i] = "D"
+        when 4
+        resCad[i] = "E"
+        when 5
+        resCad[i] = "F"
+        when 6
+        resCad[i] = "G"
+        when 7
+        resCad[i] = "H"
+        when 8
+        resCad[i] = "I"
+        when 9
+        resCad[i] = "J"
+    end
+    puts resCad[i]
+end
